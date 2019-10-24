@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Maya Math</title>
+
+    <!-- jQuery link -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- link to css -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- link to js -->
+    <script src="script.js"></script>
+</head>
+<body>
+    <h1>Maya Math</h1>
+    <br><br>
+    
+    <br><br>
+    <div class="center-div">
+    <div id="inside">
+    <button id="play" onclick="setUp()" align="center">Play</button>
+    
+
+    <p class="top-num" id="top" align="center"></p>
+    <p id="sign">x</p>
+    <p class="top-num" id="bottom" align="center"></p>
+
+    
+    <input type="text" id="input" placeholder="Answer">
+    
+
+    <p id="output"></p>
+
+    
+    <button id="submit" onclick="checkAnswer()">Submit</button>
+    </div>
+    </div>
+    <p id="praise"></p>
+    <p>Score:</p><p id="score"></p>
+</body>
+</html>

@@ -11,6 +11,7 @@ var praise = ["Great job, I love you!", "You're my watermelon little girl!", "Wo
 function setUp(){
     
     //clearing all fields
+    document.body.style.backgroundColor = "white";
     document.getElementById("top").textContent = "";
     document.getElementById("bottom").textContent = "";
     document.getElementById("praise").textContent = "";

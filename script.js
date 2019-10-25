@@ -2,15 +2,14 @@ var topNum;
 var bottomNum;
 var score = 0;
 
+
 var praise = ["Great job, I love you!", "You're my watermelon little girl!", "Wow, I knew you could do it!", 
 "You're impressive!", "If you get any better at this you will have to teach me!", "You're smart!", 
 "Yay! You did it!", "Genius!", "Impressive!", "Wow, wow, wow!"];
 
 
-
-
 function setUp(){
-    document.body.style.backgroundColor = "#FFB6C1";
+    
     //clearing all fields
     document.getElementById("top").textContent = "";
     document.getElementById("bottom").textContent = "";

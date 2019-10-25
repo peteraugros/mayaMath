@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,32 +13,32 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- link to js -->
     <script src="script.js"></script>
+    <!-- link to bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 </head>
+
 <body>
     <h1>Maya Math</h1>
     <br><br>
-    
+<div align="center"><button id="md" onclick="choice()">Multiply / Divide</button></div>
     <br><br>
-    <div class="center-div">
-    <div id="inside">
-    <button id="play" onclick="setUp()" align="center">Play</button>
-    
 
-    <p class="top-num" id="top" align="center"></p>
-    <p id="sign">x</p>
-    <p class="top-num" id="bottom" align="center"></p>
-
-    
-    <input type="text" id="input" placeholder="Answer">
-    
-
-    <p id="output"></p>
-
-    
-    <button id="submit" onclick="checkAnswer()">Submit</button>
+    <div class="container-fluid">
+        <div class="inner">
+            <button id="play" onclick="setUp()" class="btn">Play</button>
+            <p class="top-num" id="top"></p>
+            <p id="sign">x</p>
+            <p class="top-num" id="bottom"></p>
+            <input type="text" id="input" placeholder="Answer">
+            <p id="output"></p>
+            <button id="submit" onclick="checkAnswer()" class="btn">Submit</button>
+            <p id="praise"></p>
+            <p>Score:</p>
+            <p id="score"></p>
+        </div>
     </div>
-    </div>
-    <p id="praise"></p>
-    <p>Score:</p><p id="score"></p>
 </body>
+
 </html>

@@ -1,42 +1,31 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Maya Math</title>
-
-    <!-- jQuery link -->
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- link to css -->
+<html>
+  <head>
+    <script src="jquery-3.4.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!-- link to js -->
     <script src="script.js"></script>
-    <!-- link to bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-</head>
-
-<body>
+   
+  </head>
+  <body>
     <h1>Maya Math</h1>
+    <button id="play" onclick="setUp()">Play</button>
+    <br>
+    <p id="comment"></p>
+    <div id="mathDiv" class="center-div">
+    <p id="top"></p>
+    <p id="op">x</p>
+    <p id="bottom"></p>
+    <br>
+    <input id="input" type="text">
     <br><br>
-
-    <div class="container-fluid">
-        <div class="inner">
-            <button id="play" onclick="setUp()" class="btn">Play</button>
-            <p class="top-num" id="top"></p>
-            <p id="sign">x</p>
-            <p class="top-num" id="bottom"></p>
-            <input type="text" id="input" placeholder="Answer">
-            <p id="output"></p>
-            <button id="submit" onclick="checkAnswer()" class="btn">Submit</button>
-            <p id="praise"></p>
-            <p>Score:</p>
-            <p id="score"></p>
-        </div>
+    <button id="submit" onclick="check()">Submit</button>
+    <br>
+    <p id="output"></p>
     </div>
-</body>
 
+    <br>
+    <button onclick="changeSign()" id="change">multiplication</button>
+  
+  </body>
+ 
 </html>

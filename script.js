@@ -1,62 +1,158 @@
-var topNum;
-var bottomNum;
 var score = 0;
-
-
-var praise = ["Great job, I love you!", "You're my watermelon little girl!", "Wow, I knew you could do it!", 
-"You're impressive!", "If you get any better at this you will have to teach me!", "You're smart!", 
-"Yay! You did it!", "Genius!", "Impressive!", "Wow, wow, wow!"];
-
+var nice = ["Wow, wow, wow", "Great Job!", "I knew you could do it!", "Genius!", "There's nothing you can't do!",
+           "That was a tough one!", "You have to teach me!", "Sorry Heather!", "Fantastic", "You're amazing!"];
 
 function setUp(){
-    
-    //clearing all fields
-    document.body.style.backgroundColor = "white";
-    document.getElementById("top").textContent = "";
-    document.getElementById("bottom").textContent = "";
-    document.getElementById("praise").textContent = "";
-    document.getElementById("output").textContent = "";
-    document.getElementById("input").value = "";
-    document.getElementById("input").focus();
-    document.getElementById("play").textContent = "Next";
+  
+  allClear();
+  
+  var random1 = Math.floor(Math.random()*12);
+  var random2 = Math.floor(Math.random()*12);
+  var sign = document.getElementById("change").innerHTML;
+  var divisionAns = random1 * random2;
 
+  document.getElementById("play").innerHTML = "Next";
+  
+  if(sign === "division"){
 
-    var random = Math.floor(Math.random() * 9);
-    var random2 = Math.floor(Math.random() * 9);
-    topNum = random;
-    bottomNum = random2;
-
-    document.getElementById("top").textContent = random;
-    document.getElementById("bottom").textContent = random2;
-
-//end setUp function
+  document.getElementById("top").textContent = divisionAns;
+  document.getElementById("bottom").textContent = random1;
+    if(random1 === 0){
+      setUp();
+    }
+  
+  } else {
+  document.getElementById("top").textContent = random1;
+  document.getElementById("bottom").textContent = random2;
+}
+  if(sign === "subtraction" && random1 < random2){
+  setUp();
+  document.getElementById("top").textContent = random2;
+  document.getElementById("bottom").textContent = random1;
+  }
+  
 }
 
-function praiseFunc(){
-    var random3 = Math.floor(Math.random() * 10);
-    document.getElementById("praise").textContent = praise[random3];
-
-//end praise function
+function check(){
+  var getSign = document.getElementById("change").innerHTML;
+  
+   if(getSign === "multiplication"){
+    multiply();
+  } else if(getSign === "division"){
+    divide();
+  } else if(getSign === "addition"){
+    addition();
+  } else if(getSign === "subtraction"){
+    subtract();
+  }
 }
 
-function checkAnswer(){
-var answer = document.getElementById("input").value;
-var correctAnswer = topNum * bottomNum;
+function changeSign(){
+  var change = document.getElementById("change").innerHTML;
 
-parseInt(answer);
-if(answer == correctAnswer){
+  if(change === "multiplication"){
+        document.getElementById("change").textContent = "division";
+        document.getElementById("op").innerHTML = "/";
+        setUp();
+  } else if(change === "division"){
+        document.getElementById("change").textContent = "addition";
+        document.getElementById("op").innerHTML = "+";
+        setUp();
+  } else if(change === "addition"){
+        document.getElementById("change").textContent = "subtraction";
+        document.getElementById("op").innerHTML = "-";
+        setUp();
+  } else if(change === "subtraction"){
+        document.getElementById("change").textContent = "multiplication";
+        document.getElementById("op").innerHTML = "x";
+        setUp();
+  }
+  
+}
+
+function multiply(){
+  var top = document.getElementById("top").textContent;
+  var bottom = document.getElementById("bottom").textContent;
+  var userAns = document.getElementById("input").value;
+  var correctAns = top * bottom;
+  
+  if(userAns == correctAns){
     score++;
-    document.getElementById("score").textContent = score;
-    document.getElementById("output").textContent = "Correct!";
-    praiseFunc();
-
-} else {
+    document.getElementById("output").textContent = "Correct! Score = " + score;
+    document.body.style.backgroundColor = "#8aff8a";
+  } else {
     score--;
-    document.getElementById("score").textContent = score;
-    document.body.style.backgroundColor = "red";
-    document.getElementById("output").textContent = "The correct answer is " + correctAnswer;
+    document.getElementById("output").textContent = "The correct answer is " + correctAns + " Score = " + score;
+    document.body.style.backgroundColor = "#ff765e";
+  }
+  praise();
 }
 
-//end checkAnswer function
+function divide(){
+  var top = document.getElementById("top").textContent;
+  var bottom = document.getElementById("bottom").textContent;
+  var userAns = document.getElementById("input").value;
+  var correctAns = top / bottom;
+  
+  if(userAns == correctAns){
+    score++;
+    document.getElementById("output").textContent = "Correct! Score = " + score;
+    document.body.style.backgroundColor = "#8aff8a";
+  } else {
+    score--;
+    document.getElementById("output").textContent = "The correct answer is " + correctAns + " Score = " + score;
+    document.body.style.backgroundColor = "#ff765e";
+  }
+  praise();
 }
 
+function addition(){
+  var top = parseInt(document.getElementById("top").textContent);
+  var bottom = parseInt(document.getElementById("bottom").textContent);
+  var userAns = document.getElementById("input").value;
+  var correctAns = top + bottom;
+  
+  if(userAns == correctAns){
+    score++;
+    document.getElementById("output").textContent = "Correct! Score = " + score;
+    document.body.style.backgroundColor = "#8aff8a";
+  } else {
+    score--;
+    document.getElementById("output").textContent = "The correct answer is " + correctAns + " Score = " + score;
+    document.body.style.backgroundColor = "#ff765e";
+  }
+  praise();
+}
+
+function subtract(){
+  var top = document.getElementById("top").textContent;
+  var bottom = document.getElementById("bottom").textContent;
+  var userAns = document.getElementById("input").value;
+  var correctAns = top - bottom;
+  
+  if(userAns == correctAns){
+    score++;
+    document.getElementById("output").textContent = "Correct! Score = " + score;
+    document.body.style.backgroundColor = "#8aff8a";
+  } else {
+    score--;
+    document.getElementById("output").textContent = "The correct answer is " + correctAns + " Score = " + score;
+    document.body.style.backgroundColor = "#ff765e";
+  }
+  praise();
+}
+
+function allClear(){
+  document.body.style.backgroundColor = "white";
+  document.getElementById("output").textContent = "";
+  document.getElementById("input").value = "";
+  document.getElementById("input").focus();
+  document.getElementById("comment").textContent = "";
+}
+
+function praise(){
+
+var random3 = Math.floor(Math.random() * 10);
+document.getElementById("comment").textContent = nice[random3];
+
+}

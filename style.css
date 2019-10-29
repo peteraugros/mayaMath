@@ -1,35 +1,38 @@
-.inner{
-    background-color: gray;
+*{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-family: 'Permanent Marker', cursive;
+  }
+  
+  #mathDiv{
     border: 3px solid black;
+    text-align: center;
+  
+  }
+  
+  .center-div
+  {
+       margin: 0 auto;
+       width: 300px; 
+       background-color: gray;
+       border-radius: 20px;
+  }
+  
+  button{
     border-radius: 10px;
-    width: 50%;
-
-    margin: auto;
-    width: 300px;
-    padding: 10px;
-
-    text-align: center;
-
-
-}
-
-h1{
-    text-align: center;
-}
-
-.btn{
-    background-color: white;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+    font-size: 25px;
+    background-color: #ffdb78;
+  }
+  
+  p{
+    font-size: 25px;
     font-weight: bold;
-}
-
-p{
-    font-weight: bold;
-    font-size: 15px;
-}
-
-input{
-    text-align: center;
-}
+  }
+  
+  #bottom{
+    border-bottom: 3px solid black;
+    padding-bottom: 40px;
+    width: 100%;
+    
+  }
